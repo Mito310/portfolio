@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.f_name{
+    height: 50px;
+    width: 400px;
+    margin: 10px 10px;
+}
+.s_code,.f_code{
+    height: 20px;
+    width: 40px;
+    margin: 10px 10px ;
+}

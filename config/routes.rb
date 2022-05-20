@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get 'select/menu'
-  get 'field/select_field'
+  get 'fields/add/', to: 'fields#add'
+  post 'fields/add', to: 'fields#create'
+  get 'fields/index'
+  get 'fields/show'
+
 end

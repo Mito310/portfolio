@@ -1,0 +1,15 @@
+<p><%= @msg %></p>
+<table class="table">
+    <tr>
+        <th>科目コード</th>
+        <th>分野コード</th>
+        <th>分野名</th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.subject_code %></td>
+        <td><%= obj.f_code %></td>
+        <td><%= obj.f_name %></td>
+    </tr>
+    <% end %>
+</table>
