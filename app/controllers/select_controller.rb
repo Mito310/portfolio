@@ -1,5 +1,6 @@
 class SelectController < ApplicationController
-    def menu
+    def select
+        
     end
     
 end

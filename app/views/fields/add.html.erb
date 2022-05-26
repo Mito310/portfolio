@@ -1,20 +1,19 @@
 <p><%= @msg %></p>
 
-
-<%= form_with model: @field do |form| %>
-    <table class="field">
+<%= form_with model: @fields do |f| %>
+    <table>
         <tr>
-            <th><label for="subject_code">科目コード</label></th>
-            <td><input type = "text" class="s_code" name="subject_code"></td>
+            <th><%= f.label :subject_code, "科目コード" %></th>
+            <td><%= f.text_field :subject_code %></td>
         </tr>
         <tr>
-            <th><label for="f_code">分野コード</label></th>
-            <td><input type = "text" class="f_code" name="f_code"></td>
+            <th><%= f.label :f_code,"分野コード" %></th>
+            <td><%= f.text_field :f_code %></td>
         </tr>
         <tr>
-            <th><label for="f_name">分野名</label></th>
-            <td><input type = "text" class="f_name" name="f_name"></td>
+            <th><%= f.label :f_name, "分野名" %></th>
+            <td><%= f.text_area :f_name, size:30 %></td>
         </tr>
     </table>
-    <input type = "submit">
+    <%= f.submit "送信" %>
 <% end %>

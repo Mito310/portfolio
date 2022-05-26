@@ -15,10 +15,27 @@ class FieldsController < ApplicationController
      end
 
     def create
+        @field = Field.new field_params
+        if @field.save then
+            redirect_to '/fields/add'
+        else
+            re = ''
+            @field.errors.messages.each do |key, vals|
+                vals.each do |val|
+                    re += '<span style="color:red">' + key.to_s +
+                            '</span>' + val + '<br>'
+                end
+            end
+            @msg = re.html_safe
+            render 'add'
+        end
+
+=begin
         if request.post? then
                 Field.create(field_params)
         end
         redirect_to '/fields/add'
+=end
     end
 
     def edit
