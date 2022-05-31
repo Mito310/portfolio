@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+collection_select {
+    height: 50px;
+}

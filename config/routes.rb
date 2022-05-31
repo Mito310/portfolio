@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'fields/edit/:id', to: 'fields#edit'
   post 'fields/edit/:id', to: 'fields#update'
   get 'fields/delete/:id', to: 'fields#delete'
-
+  post 'select/test'
 end
