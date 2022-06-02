@@ -1,6 +1,16 @@
 class SelectController < ApplicationController
-    $k_code = 2
+    def menu
+    end
 
+    def science
+        $k_code = 1
+        redirect_to '/select/select'
+    end
+
+    def social_study
+        $k_code = 2
+        redirect_to '/select/select'
+    end
     def select
         @kamoku = Subject.find_by(subject_code: $k_code)
 

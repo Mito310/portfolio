@@ -3,7 +3,21 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get 'select', to: 'select#select'
+
+  #メニュー画面
+  get 'select/menu'
+
+  #理科ボタン
+  get 'select/science'
+  post 'select/science'
+
+  #社会ボタン
+  get 'select/social_study'
+  post 'select/social_study'
+
+  #分野選択画面
+  get 'select/select'
+
   get 'fields/add/', to: 'fields#add'
   post 'fields/add', to: 'fields#create'
   get 'fields/index'
