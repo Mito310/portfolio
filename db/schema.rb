@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_20_085735) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_214335) do
   create_table "fields", force: :cascade do |t|
     t.integer "subject_code"
     t.integer "f_code"
@@ -21,9 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_085735) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "q_code"
-    t.text "q_text"
-    t.text "i_path"
-    t.integer "subject_code"
+    t.text "q_sent"
+    t.integer "subjet_code"
     t.integer "f_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

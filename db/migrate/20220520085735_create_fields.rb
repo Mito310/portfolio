@@ -8,6 +8,6 @@ class CreateFields < ActiveRecord::Migration[7.0]
       t.timestamps
     end
     add_index :fields, [:subject_code, :f_code], unique: true
-    add_foreign_key :fields,:subjects
+    add_foreign_key :fields,:subjects , coumn: :subject_code
   end
 end
