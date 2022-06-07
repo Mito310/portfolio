@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   resources :questions
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -6,7 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   #メニュー画面
-  get 'select/menu'
+  get 'select', to: 'select#menu'
 
   #理科ボタン
   get 'select/science'
