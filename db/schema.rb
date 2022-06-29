@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_131904) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_29_133441) do
+  create_table "choices", force: :cascade do |t|
+    t.integer "c_code"
+    t.text "choice"
+    t.boolean "answer"
+    t.integer "q_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.integer "q_code"
+    t.text "q_sent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "exam_id"
+  end
+
   create_table "fields", force: :cascade do |t|
     t.integer "subject_code"
     t.integer "f_code"
@@ -22,8 +39,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_131904) do
   create_table "questions", force: :cascade do |t|
     t.integer "q_code"
     t.text "q_sent"
-    t.integer "subjet_code"
+    t.integer "subject_code"
     t.integer "f_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "rec_code"
+    t.integer "user_id"
+    t.date "date"
+    t.integer "subject_code"
+    t.integer "f_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "rec_code"
+    t.integer "q_code"
+    t.boolean "user_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

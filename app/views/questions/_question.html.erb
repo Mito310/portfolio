@@ -1,22 +1,24 @@
 <div id="<%= dom_id question %>">
-  <p>
-    <strong>Q code:</strong>
-    <%= question.q_code %>
-  </p>
+  <table>
+    <tr>
+      <th><strong>問題番号</strong></th>
+      <td><%= question.q_code %></td>
+    </tr>
 
-  <p>
-    <strong>Q sent:</strong>
-    <%= question.q_sent %>
-  </p>
+    <tr>
+      <th><strong>問題文</strong></th>
+      <td><%= question.q_sent %></td>
+    </tr>
 
-  <p>
-    <strong>Subjet code:</strong>
-    <%= question.subjet_code %>
-  </p>
+    <tr>
+      <th><strong>科目コード</strong></th>
+      <td><%= question.subjet_code %></td>
+    </tr>
 
-  <p>
-    <strong>F code:</strong>
-    <%= question.f_code %>
-  </p>
+    <tr>
+      <th><strong>分野コード</strong></th>
+      <td><%= question.f_code %></td>
+    </tr>
+  </table>
 
 </div>

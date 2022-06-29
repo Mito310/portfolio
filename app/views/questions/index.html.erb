@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Questions</h1>
+<h1>問題文一覧</h1>
 
 <div id="questions">
-  <% @questions.each do |question| %>
-    <%= render question %>
-    <p>
-      <%= link_to "Show this question", question %>
-    </p>
-  <% end %>
+    <table>
+    <tr>
+      <th><strong>問題番号</strong></th>
+      <th><strong>問題文</strong></th>
+      <th></th>
+    </tr>
+
+    <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.q_code %></td>
+      <td><%= question.q_sent %></td>
+      <td>      <%= link_to "Show this question", question %> </td>
+    </tr>
+    <% end %>
+
+    </table>
 </div>
 
 <%= link_to "New question", new_question_path %>

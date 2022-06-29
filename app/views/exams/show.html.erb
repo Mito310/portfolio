@@ -1,0 +1,8 @@
+<p><%= @exam.exam_id %>     <%= @exam.q_sent %></p>
+
+<% @choices.each do |choice| %>
+    <% c_id =  choice.id %>
+    <%= button_to choice.choice, {controller: 'exams', action: 'answer', params:{id: c_id }} %>
+<% end %>
+
+

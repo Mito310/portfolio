@@ -2,7 +2,7 @@
     <p><%= @kamoku.name %></p>
 
 
-    <%= form_with url:"/select/test",local: true do |f| %>
+    <%= form_with url:"/exams/create",local: true do |f| %>
         <%= f.collection_select(:b_code,@bunya,:id,:f_name) %>
         <%= f.submit %>
     <% end %>

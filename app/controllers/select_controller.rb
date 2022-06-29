@@ -18,9 +18,5 @@ class SelectController < ApplicationController
         @bunya = Field.where(subject_code: $k_code)
     end
 
-    def test
-        @bunya = Field.where(subject_code: $k_code)
-        @b_para = params[:b_code]
-    end
     
 end

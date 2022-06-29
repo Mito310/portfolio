@@ -10,8 +10,5 @@ class Field < ApplicationRecord
 
     
 
-    def to_param
-        persisted? ? to_key.join(',') :nil
-    end
    
 end

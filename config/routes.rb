@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :results
+  resources :records
+  get 'exams/create'
+  post 'exams/create'
+  get 'exams/show'
+  get 'exams/delete'
+  post 'exams/delete'
+  resources :choices
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -22,6 +30,19 @@ Rails.application.routes.draw do
 
   #分野選択画面
   get 'select/select'
+
+  get 'exams/create', to: 'exams#create'
+  post 'exams/create', to: 'exams#create'
+
+  get 'exams/choice'
+  post 'exams/choice'
+
+  get 'exams/answer'
+  post 'exams/answer'
+
+
+  get 'exams/:id', to: 'exams#show'
+  post 'exams/:id', to: 'exams#show', as: 'next'
 
   get 'fields/add/', to: 'fields#add'
   post 'fields/add', to: 'fields#create'

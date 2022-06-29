@@ -1,0 +1,13 @@
+<% if @choice.answer %>
+    <h1><strong>〇</strong></h1>
+<% else %>
+    <h1><strong>×</strong></h1>
+<% end %>
+<h2>正解：<%= @right_ans %></h2>
+<p>あなたの答え：<%= @choice.choice %></p>
+
+<% if @exam.next.present? %>
+<%= link_to"NEXT", next_path(@exam.next) %>
+<% else %>
+<%= button_to "結果", {controller: 'exams', action: 'delete'} %>
+<% end %>

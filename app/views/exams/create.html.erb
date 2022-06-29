@@ -1,0 +1,5 @@
+<h1>Exams#create</h1>
+<% @exam.each do |e| %>
+    <p><%= e.q_code %>,<%= e.q_sent %></p>
+<% end %>
+<%= button_to "結果", {controller: 'exams', action: 'delete'} %>
