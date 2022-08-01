@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  post 'seiseki/index'
+  get 'seiseki/:id', to: 'seiseki#detail'
+  post 'seiseki/:id', to: 'seiseki#detail'
+
+  get 'results/result'
+
   resources :results
   resources :records
+
   get 'exams/create'
   post 'exams/create'
   get 'exams/show'
@@ -52,4 +59,5 @@ Rails.application.routes.draw do
   post 'fields/edit/:id', to: 'fields#update'
   get 'fields/delete/:id', to: 'fields#delete'
   post 'select/test'
+
 end

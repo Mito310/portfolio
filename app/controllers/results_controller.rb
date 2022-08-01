@@ -57,6 +57,14 @@ class ResultsController < ApplicationController
     end
   end
 
+  def result
+    record = Record.where(user_id: current_user.user_id).last
+    record_id = record.id
+    @result = Result.where(record_id: record_id)
+
+    @right = Result.where(record_id: record_id, user_answer: true)  
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_result
@@ -65,6 +73,6 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
-      params.require(:result).permit(:rec_code, :q_code, :user_answer)
+      params.require(:result).permit(:record_id, :q_code, :user_answer)
     end
 end

@@ -11,10 +11,12 @@ class FieldsController < ApplicationController
     
      def add
         @msg = "追加"
+        @field = Field.new
 
      end
 
     def create
+
         @field = Field.new field_params
         if @field.save then
             redirect_to '/fields/add'
@@ -30,12 +32,6 @@ class FieldsController < ApplicationController
             render 'add'
         end
 
-=begin
-        if request.post? then
-                Field.create(field_params)
-        end
-        redirect_to '/fields/add'
-=end
     end
 
     def edit
@@ -57,6 +53,6 @@ class FieldsController < ApplicationController
     
     private
     def field_params
-        params.permit(:subject_code, :f_code, :f_name)
+        params.require(:field).permit(:subject_code, :f_code, :f_name)
     end
 end

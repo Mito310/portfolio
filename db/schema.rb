@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_29_133441) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_130737) do
   create_table "choices", force: :cascade do |t|
     t.integer "c_code"
     t.text "choice"
@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_133441) do
   end
 
   create_table "records", force: :cascade do |t|
-    t.integer "rec_code"
     t.integer "user_id"
     t.date "date"
     t.integer "subject_code"
@@ -56,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_133441) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.integer "rec_code"
+    t.integer "record_id"
     t.integer "q_code"
     t.boolean "user_answer"
     t.datetime "created_at", null: false

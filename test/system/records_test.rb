@@ -16,7 +16,6 @@ class RecordsTest < ApplicationSystemTestCase
 
     fill_in "Date", with: @record.date
     fill_in "F code", with: @record.f_code
-    fill_in "Rec code", with: @record.rec_code
     fill_in "Subject code", with: @record.subject_code
     fill_in "User", with: @record.user_id
     click_on "Create Record"
@@ -31,7 +30,6 @@ class RecordsTest < ApplicationSystemTestCase
 
     fill_in "Date", with: @record.date
     fill_in "F code", with: @record.f_code
-    fill_in "Rec code", with: @record.rec_code
     fill_in "Subject code", with: @record.subject_code
     fill_in "User", with: @record.user_id
     click_on "Update Record"

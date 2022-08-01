@@ -17,7 +17,7 @@ class ResultsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create result" do
     assert_difference("Result.count") do
-      post results_url, params: { result: { q_code: @result.q_code, rec_code: @result.rec_code, user_answer: @result.user_answer } }
+      post results_url, params: { result: { q_code: @result.q_code, record_id: @result.record_id, user_answer: @result.user_answer } }
     end
 
     assert_redirected_to result_url(Result.last)
@@ -34,7 +34,7 @@ class ResultsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update result" do
-    patch result_url(@result), params: { result: { q_code: @result.q_code, rec_code: @result.rec_code, user_answer: @result.user_answer } }
+    patch result_url(@result), params: { result: { q_code: @result.q_code, record_id: @result.record_id, user_answer: @result.user_answer } }
     assert_redirected_to result_url(@result)
   end
 

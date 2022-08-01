@@ -1,6 +1,10 @@
-<%= button_to "理科", {controller: 'select', action: 'science'} %>
-<br>
-<%= button_to "社会", {controller: 'select', action: 'social_study'} %>
+<div class="menu">
+<%= button_to "理科", {controller: 'select', action: 'science'},{class: "button"} %>              
+
+<%= button_to "社会", {controller: 'select', action: 'social_study'},{class: "button"} %>         
+
+<%= button_to "成績", {controller: 'seiseki', action: 'index'},{class: "button"} %>               
+</div>
 <div><%= link_to "Sign out&gt;&gt;".html_safe,
         destroy_user_session_path,
         method: :delete %></div>
