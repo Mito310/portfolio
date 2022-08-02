@@ -72,3 +72,5 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'composite_primary_keys'

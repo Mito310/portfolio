@@ -1,0 +1,23 @@
+<% i = 0 %>
+
+<table>
+    <% @data.each do |detail| %>
+        <% i += 1 %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= Question.find_by(q_code: detail.q_code).q_sent %></td>
+        <% if detail.user_answer %>
+          <td>〇</td>
+        <% else %>
+          <td>×</td>
+        <% end %>
+        </tr>
+  <% end %>
+</table>
+
+<p><%= @right.count %> / <%= @data.count %></p>
+<p><%= (@right.count.to_f / @data.count * 100).to_i %> %</p>
+
+<p><a href='/select'>メニュー</a></p>
+
+  

@@ -1,0 +1,19 @@
+.menu {
+    display:flex;
+}
+.button {
+    background: #ff701e;
+    border: 2px solid #ff701e;
+    border-radius: 60px;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    max-width: 300px;
+    padding: 15px 40px;
+    text-align: center;
+  }
+  
+  .button:hover {
+    background: #fff;
+    color: #ff701e;
+  }

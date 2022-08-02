@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+collection_select {
+    height: 50px;
+}
+header{
+    background-color: rgb(153, 218, 221); 
+    margin: 0;   
+}

@@ -7,9 +7,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <header>
+      <img src="/assets/logo2.png" width=130>
+    </header>
     <%= yield %>
   </body>
 </html>

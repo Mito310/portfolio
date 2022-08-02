@@ -1,0 +1,21 @@
+<h3>今回の成績</h3>
+<% i = 0 %>
+<table>
+<% @result.each do |r| %>
+    <% i += 1 %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= Question.find_by(q_code: r.q_code).q_sent %></td>
+      <% if r.user_answer %>
+        <td>〇</td>
+      <% else %>
+        <td>×</td>
+      <% end %>
+      </tr>
+<% end %>
+</table>
+
+<p><%= @right.count %> / <%= @result.count %></p>
+<p><%= (@right.count.to_f / @result.count * 100).to_i %> %</p>
+
+<p><a href='/select'>メニュー</a></p>
