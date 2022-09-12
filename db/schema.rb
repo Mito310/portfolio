@@ -23,24 +23,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_03_130737) do
   create_table "exams", force: :cascade do |t|
     t.integer "q_code"
     t.text "q_sent"
+    t.integer "exam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "exam_id"
   end
 
-  create_table "fields", force: :cascade do |t|
-    t.integer "subject_code"
-    t.integer "f_code"
-    t.text "f_name"
+  create_table "fields", primary_key: ["subject_code", "f_code"], force: :cascade do |t|
+    t.integer "subject_code", null: false
+    t.integer "f_code", null: false
+    t.text "f_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "q_code"
-    t.text "q_sent"
+    t.integer "q_code", null: false
+    t.text "q_sent", null: false
     t.integer "subject_code"
-    t.integer "f_code"
+    t.integer "f_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
