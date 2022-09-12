@@ -8,7 +8,6 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_foreign_key :questions,:fields , column: :subject_code :f_code
 
   end
 end
