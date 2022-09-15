@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_131933) do
 
   create_table "fields", force: :cascade do |t|
     t.integer "subject_id"
-    t.text "field__name"
+    t.text "field_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

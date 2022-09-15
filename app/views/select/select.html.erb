@@ -3,6 +3,6 @@
 
 
     <%= form_with url:"/exams/create",local: true do |f| %>
-        <%= f.collection_select(:b_code,@bunya,:id,:field__name) %>
+        <%= f.collection_select(:b_code,@bunya,:id,:field_name) %>
         <%= f.submit "選択" %>
     <% end %>

@@ -2,7 +2,7 @@
   <% @record.each do |r| %>
       <tr>
         <td><%= r.date %></td>
-        <td><%= Field.find(r.field_id).field__name %></td>
+        <td><%= Field.find(r.field_id).field_name %></td>
         <td><%= Result.where(record_id: r.id, user_answer: true).count %> / <%=Result.where(record_id: r.id).count %></td>
         <td><a href='/seiseki/<%= r.id %>'>詳細</a></td>
       </tr>
