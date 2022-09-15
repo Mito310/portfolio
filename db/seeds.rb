@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-#Subject.create(name:'理科')
-#Subject.create(name:'社会')
+Subject.create(name:'理科')
+Subject.create(name:'社会')
 
 Field.create!(subject_id:1, field__name:'身近な生物の観察')
 Field.create(subject_id:1, field__name:'植物の特徴と分類')
@@ -24,7 +24,7 @@ Field.create(subject_id:1, field__name:'音')
 Field.create(subject_id:1, field__name:'力')
 Field.create(subject_id:2, field__name:'人類の始まり')
 Field.create(subject_id:2, field__name:'縄文時代、弥生時代')
-=begin
+
 Question.create!(sentence:'手に持った花などのつくりをルーペで観察するとき、ルーペと観察物のどちらを前後に動かして観察するか。', subject_id:1, field_id:1)
 Question.create(sentence:'スケッチを描くとき、細い線で描くか、太い線で描くか。', subject_id:1, field_id:1)
 Question.create(sentence:'スケッチを描くとき、影をつけて描くか、つけないで描くか。', subject_id:1, field_id:1)
@@ -71,4 +71,4 @@ Choice.create(choice_no:3, choice:'200倍', answer:'true', question_id:8)
 Choice.create(choice_no:4, choice:'2000倍', answer:'false', question_id:8)
 Choice.create(choice_no:1, choice:'同じグループ', answer:'true', question_id:9)
 Choice.create(choice_no:2, choice:'違うグループ', answer:'false', question_id:9)
-=end
+
