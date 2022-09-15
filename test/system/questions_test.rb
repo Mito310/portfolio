@@ -14,10 +14,9 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "New question"
 
-    fill_in "F code", with: @question.f_code
-    fill_in "Q code", with: @question.q_code
-    fill_in "Q sent", with: @question.q_sent
-    fill_in "Subjet code", with: @question.subjet_code
+    fill_in "Field", with: @question.field_id
+    fill_in "Sentence", with: @question.sentence
+    fill_in "Subject", with: @question.subject_id
     click_on "Create Question"
 
     assert_text "Question was successfully created"
@@ -28,10 +27,9 @@ class QuestionsTest < ApplicationSystemTestCase
     visit question_url(@question)
     click_on "Edit this question", match: :first
 
-    fill_in "F code", with: @question.f_code
-    fill_in "Q code", with: @question.q_code
-    fill_in "Q sent", with: @question.q_sent
-    fill_in "Subjet code", with: @question.subjet_code
+    fill_in "Field", with: @question.field_id
+    fill_in "Sentence", with: @question.sentence
+    fill_in "Subject", with: @question.subject_id
     click_on "Update Question"
 
     assert_text "Question was successfully updated"

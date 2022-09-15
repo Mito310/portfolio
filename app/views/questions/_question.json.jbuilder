@@ -1,2 +1,2 @@
-json.extract! question, :id, :q_code, :q_sent, :subjet_code, :f_code, :created_at, :updated_at
+json.extract! question, :id, :sentence, :subject_id, :field_id, :created_at, :updated_at
 json.url question_url(question, format: :json)

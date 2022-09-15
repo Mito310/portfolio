@@ -13,9 +13,9 @@ class SelectController < ApplicationController
         redirect_to '/select/select'    
     end
     def select
-        @kamoku = Subject.find_by(subject_code: $k_code)    #理科ないし社会のレコードを取得（科目名取得のため）
+        @kamoku = Subject.find($k_code)    #理科ないし社会のレコードを取得（科目名取得のため）
 
-        @bunya = Field.where(subject_code: $k_code)         #各科目の分野配列を取得
+        @bunya = Field.where(subject_id: $k_code)         #各科目の分野配列を取得
 
     end
 

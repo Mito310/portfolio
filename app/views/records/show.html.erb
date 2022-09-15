@@ -1,10 +1,10 @@
-<table>
-  <% @record.each do |r| %>
-      <tr>
-        <td><%= r.date %></td>
-        <td><%= Field.find_by(f_code: r.f_code).f_name %></td>
-        <td><%= Result.where(record_id: r.record_id, user_answer: true).count %> / <%=Result.where(record_id: r.record_id).count %></td>
-      </tr>
-  <% end %>
-</table>
+<p style="color: green"><%= notice %></p>
 
+<%= render @record %>
+
+<div>
+  <%= link_to "Edit this record", edit_record_path(@record) %> |
+  <%= link_to "Back to records", records_path %>
+
+  <%= button_to "Destroy this record", @record, method: :delete %>
+</div>

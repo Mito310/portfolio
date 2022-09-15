@@ -10,37 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_03_130737) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_14_131933) do
   create_table "choices", force: :cascade do |t|
-    t.integer "c_code"
+    t.integer "choice_no"
     t.text "choice"
     t.boolean "answer"
-    t.integer "q_code"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "exams", force: :cascade do |t|
-    t.integer "q_code"
-    t.text "q_sent"
-    t.integer "exam_id"
+    t.integer "question_id"
+    t.text "sentence"
+    t.integer "exam_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "fields", primary_key: ["subject_code", "f_code"], force: :cascade do |t|
-    t.integer "subject_code", null: false
-    t.integer "f_code", null: false
-    t.text "f_name", null: false
+  create_table "fields", force: :cascade do |t|
+    t.integer "subject_id"
+    t.text "field__name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "q_code", null: false
-    t.text "q_sent", null: false
-    t.integer "subject_code"
-    t.integer "f_code", null: false
+    t.text "sentence"
+    t.integer "subject_id"
+    t.integer "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,23 +46,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_03_130737) do
   create_table "records", force: :cascade do |t|
     t.integer "user_id"
     t.date "date"
-    t.integer "subject_code"
-    t.integer "f_code"
+    t.integer "subject_id"
+    t.integer "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "results", force: :cascade do |t|
     t.integer "record_id"
-    t.integer "q_code"
+    t.integer "question_id"
     t.boolean "user_answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.integer "subject_code"
-    t.text "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,2 +1,2 @@
-json.extract! choice, :id, :c_code, :choice, :answer, :q_code, :created_at, :updated_at
+json.extract! choice, :id, :choice_no, :choice, :answer, :question_id, :created_at, :updated_at
 json.url choice_url(choice, format: :json)

@@ -1,8 +1,6 @@
 class ChoicesController < ApplicationController
   before_action :set_choice, only: %i[ show edit update destroy ]
 
-
-
   # GET /choices or /choices.json
   def index
     @choices = Choice.all
@@ -67,6 +65,6 @@ class ChoicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def choice_params
-      params.require(:choice).permit(:c_code, :choice, :answer, :q_code)
+      params.require(:choice).permit(:choice_no, :choice, :answer, :question_id)
     end
 end

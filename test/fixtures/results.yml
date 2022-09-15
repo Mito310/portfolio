@@ -2,10 +2,10 @@
 
 one:
   record_id: 1
-  q_code: 1
+  question_id: 1
   user_answer: false
 
 two:
   record_id: 1
-  q_code: 1
+  question_id: 1
   user_answer: false

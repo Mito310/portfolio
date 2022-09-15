@@ -1,33 +1,14 @@
-<p><%= @msg %></p>
+<p style="color: green"><%= notice %></p>
 
+<h1>Fields</h1>
 
-<table class="table">
-    <tr>
-        <th>科目コード</th>
-        <th>分野コード</th>
-        <th>分野名</th>
-    </tr>
-    <% @data.each do |obj| %>
-    <tr>
-        <td><%= obj.subject_code %></td>
-        <td><%= obj.f_code %></td>
-        <td><%= obj.f_name %></td>
-        <td><a href="/fields/<%= obj.id %>">Show</a></td>
-        <td><a href="/fields/edit/<%= obj.id %>">Edit</a>&nbsp;&nbsp
-            <a href="javascript:delData(<%= obj.id %>);">Delete</a>
-        </td>
-    </tr>
-    <tr>
-    <% end %>
-    <td><a href="/fields/add">Add</a></td>
+<div id="fields">
+  <% @fields.each do |field| %>
+    <%= render field %>
+    <p>
+      <%= link_to "Show this field", field %>
+    </p>
+  <% end %>
+</div>
 
-</table>
-
-<script>
-function delData(num){
-    if (confirm('このデータを削除しますか？')){
-        document.location = "/fields/delete/" + num;
-    }
-    return false;
-}
-</script>
+<%= link_to "New field", new_field_path %>

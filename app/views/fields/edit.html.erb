@@ -1,18 +1,10 @@
-<p><%= @msg %></p>
-<%= form_with(model: @fields, local: true) do |f| %>   <!-- モデルのインスタンスl変数を複数形にしないと動かない--!>
-    <table class="field">
-        <tr>
-            <th><label for="subject_code">科目コード</label></th>
-            <td><%= f.text_field :subjectcode,  class:"form-control" %></td>
-        </tr>
-        <tr>
-            <th><label for="f_code">分野コード</label></th>
-            <td><%= f.text_field :f_code, class:"form-control" %></td>
-        </tr>
-        <tr>
-            <th><label for="f_name">分野名</label></th>
-            <td><%= f.text_area :f_name, class:"form-control" %></td>
-        </tr>
-    </table>
-    <%= f.submit "送信" %>
-<% end %>
+<h1>Editing field</h1>
+
+<%= render "form", field: @field %>
+
+<br>
+
+<div>
+  <%= link_to "Show this field", @field %> |
+  <%= link_to "Back to fields", fields_path %>
+</div>

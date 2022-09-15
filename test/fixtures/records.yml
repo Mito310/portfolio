@@ -2,12 +2,12 @@
 
 one:
   user_id: 1
-  date: 2022-07-01
-  subject_code: 1
-  f_code: 1
+  date: 2022-09-14
+  subject_id: 1
+  field_id: 1
 
 two:
   user_id: 1
-  date: 2022-07-01
-  subject_code: 1
-  f_code: 1
+  date: 2022-09-14
+  subject_id: 1
+  field_id: 1

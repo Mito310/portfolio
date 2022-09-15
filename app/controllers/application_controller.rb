@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
 
     private
     def after_sign_out_path_for(resource)
+        '/users/sign_in'
+    end
+    def after_sign_in_path_for(resource)
         '/select'
     end
-
 
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up,keys:[:user_id])

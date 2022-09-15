@@ -5,20 +5,32 @@ Rails.application.routes.draw do
 
   get 'results/result'
 
+  resources :choices
   resources :results
   resources :records
+  get 'exams/create'
+  post 'exams/create'
+
+  resources :exams
+  resources :questions
+  resources :fields
+  resources :subjects
+  post 'seiseki/index'
+  get 'seiseki/:id', to: 'seiseki#detail'
+  post 'seiseki/:id', to: 'seiseki#detail'
+
+  get 'results/result'
+
 
   get 'exams/create'
   post 'exams/create'
   get 'exams/show'
   get 'exams/delete'
   post 'exams/delete'
-  resources :choices
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :questions
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -51,13 +63,6 @@ Rails.application.routes.draw do
   get 'exams/:id', to: 'exams#show'
   post 'exams/:id', to: 'exams#show', as: 'next'
 
-  get 'fields/add/', to: 'fields#add'
-  post 'fields/add', to: 'fields#create'
-  get 'fields/index'
-  get 'fields/:id', to: 'fields#show'
-  get 'fields/edit/:id', to: 'fields#edit'
-  post 'fields/edit/:id', to: 'fields#update'
-  get 'fields/delete/:id', to: 'fields#delete'
   post 'select/test'
 
 end

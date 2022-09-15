@@ -73,6 +73,6 @@ class ResultsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def result_params
-      params.require(:result).permit(:record_id, :q_code, :user_answer)
+      params.require(:result).permit(:record_id, :question_id, :user_answer)
     end
 end

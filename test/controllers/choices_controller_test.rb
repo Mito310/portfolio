@@ -17,7 +17,7 @@ class ChoicesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create choice" do
     assert_difference("Choice.count") do
-      post choices_url, params: { choice: { answer: @choice.answer, c_code: @choice.c_code, choice: @choice.choice, q_code: @choice.q_code } }
+      post choices_url, params: { choice: { answer: @choice.answer, choice: @choice.choice, choice_no: @choice.choice_no, question_id: @choice.question_id } }
     end
 
     assert_redirected_to choice_url(Choice.last)
@@ -34,7 +34,7 @@ class ChoicesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update choice" do
-    patch choice_url(@choice), params: { choice: { answer: @choice.answer, c_code: @choice.c_code, choice: @choice.choice, q_code: @choice.q_code } }
+    patch choice_url(@choice), params: { choice: { answer: @choice.answer, choice: @choice.choice, choice_no: @choice.choice_no, question_id: @choice.question_id } }
     assert_redirected_to choice_url(@choice)
   end
 

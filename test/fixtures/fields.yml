@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  subject_code: 1
-  f_code: 1
-  f_name: MyText
+  subject_id: 1
+  field__name: MyText
 
 two:
-  subject_code: 1
-  f_code: 1
-  f_name: MyText
+  subject_id: 1
+  field__name: MyText

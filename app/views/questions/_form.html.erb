@@ -12,23 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :q_code, style: "display: block" %>
-    <%= form.number_field :q_code %>
+    <%= form.label :sentence, style: "display: block" %>
+    <%= form.text_area :sentence %>
   </div>
 
   <div>
-    <%= form.label :q_sent, style: "display: block" %>
-    <%= form.text_area :q_sent %>
+    <%= form.label :subject_id, style: "display: block" %>
+    <%= form.number_field :subject_id %>
   </div>
 
   <div>
-    <%= form.label :subjet_code, style: "display: block" %>
-    <%= form.number_field :subjet_code %>
-  </div>
-
-  <div>
-    <%= form.label :f_code, style: "display: block" %>
-    <%= form.number_field :f_code %>
+    <%= form.label :field_id, style: "display: block" %>
+    <%= form.number_field :field_id %>
   </div>
 
   <div>

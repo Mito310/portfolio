@@ -15,9 +15,9 @@ class ChoicesTest < ApplicationSystemTestCase
     click_on "New choice"
 
     check "Answer" if @choice.answer
-    fill_in "C code", with: @choice.c_code
     fill_in "Choice", with: @choice.choice
-    fill_in "Q code", with: @choice.q_code
+    fill_in "Choice no", with: @choice.choice_no
+    fill_in "Question", with: @choice.question_id
     click_on "Create Choice"
 
     assert_text "Choice was successfully created"
@@ -29,9 +29,9 @@ class ChoicesTest < ApplicationSystemTestCase
     click_on "Edit this choice", match: :first
 
     check "Answer" if @choice.answer
-    fill_in "C code", with: @choice.c_code
     fill_in "Choice", with: @choice.choice
-    fill_in "Q code", with: @choice.q_code
+    fill_in "Choice no", with: @choice.choice_no
+    fill_in "Question", with: @choice.question_id
     click_on "Update Choice"
 
     assert_text "Choice was successfully updated"

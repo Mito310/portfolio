@@ -1,15 +1,10 @@
-<p><%= @msg %></p>
-<table class="table">
-    <tr>
-        <th>科目コード</th>
-        <td><%= @data.subject_code %></td>
-    </tr>
-    <tr>
-        <th>分野コード</th>
-        <td><%= @data.f_code %></td>
-    </tr>
-    <tr>
-        <th>分野名</th>
-        <td><%= @data.f_name %></td>
-    <tr>
-</table>
+<p style="color: green"><%= notice %></p>
+
+<%= render @field %>
+
+<div>
+  <%= link_to "Edit this field", edit_field_path(@field) %> |
+  <%= link_to "Back to fields", fields_path %>
+
+  <%= button_to "Destroy this field", @field, method: :delete %>
+</div>

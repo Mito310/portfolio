@@ -15,8 +15,8 @@ class RecordsTest < ApplicationSystemTestCase
     click_on "New record"
 
     fill_in "Date", with: @record.date
-    fill_in "F code", with: @record.f_code
-    fill_in "Subject code", with: @record.subject_code
+    fill_in "Field", with: @record.field_id
+    fill_in "Subject", with: @record.subject_id
     fill_in "User", with: @record.user_id
     click_on "Create Record"
 
@@ -29,8 +29,8 @@ class RecordsTest < ApplicationSystemTestCase
     click_on "Edit this record", match: :first
 
     fill_in "Date", with: @record.date
-    fill_in "F code", with: @record.f_code
-    fill_in "Subject code", with: @record.subject_code
+    fill_in "Field", with: @record.field_id
+    fill_in "Subject", with: @record.subject_id
     fill_in "User", with: @record.user_id
     click_on "Update Record"
 

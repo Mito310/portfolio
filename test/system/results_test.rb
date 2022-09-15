@@ -14,7 +14,7 @@ class ResultsTest < ApplicationSystemTestCase
     visit results_url
     click_on "New result"
 
-    fill_in "Q code", with: @result.q_code
+    fill_in "Question", with: @result.question_id
     fill_in "Record", with: @result.record_id
     check "User answer" if @result.user_answer
     click_on "Create Result"
@@ -27,7 +27,7 @@ class ResultsTest < ApplicationSystemTestCase
     visit result_url(@result)
     click_on "Edit this result", match: :first
 
-    fill_in "Q code", with: @result.q_code
+    fill_in "Question", with: @result.question_id
     fill_in "Record", with: @result.record_id
     check "User answer" if @result.user_answer
     click_on "Update Result"

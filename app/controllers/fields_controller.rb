@@ -1,58 +1,70 @@
 class FieldsController < ApplicationController
-    def index
-        @msg = 'データ'
-        @data = Field.all
+  before_action :set_field, only: %i[ show edit update destroy ]
+
+  # GET /fields or /fields.json
+  def index
+    @fields = Field.all
+  end
+
+  # GET /fields/1 or /fields/1.json
+  def show
+  end
+
+  # GET /fields/new
+  def new
+    @field = Field.new
+  end
+
+  # GET /fields/1/edit
+  def edit
+  end
+
+  # POST /fields or /fields.json
+  def create
+    @field = Field.new(field_params)
+
+    respond_to do |format|
+      if @field.save
+        format.html { redirect_to field_url(@field), notice: "Field was successfully created." }
+        format.json { render :show, status: :created, location: @field }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @field.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /fields/1 or /fields/1.json
+  def update
+    respond_to do |format|
+      if @field.update(field_params)
+        format.html { redirect_to field_url(@field), notice: "Field was successfully updated." }
+        format.json { render :show, status: :ok, location: @field }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @field.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /fields/1 or /fields/1.json
+  def destroy
+    @field.destroy
+
+    respond_to do |format|
+      format.html { redirect_to fields_url, notice: "Field was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_field
+      @field = Field.find(params[:id])
     end
 
-    def show
-        @msg = "分野"
-        @data = Field.find(params[:id])
-    end
-    
-     def add
-        @msg = "追加"
-        @field = Field.new
-
-     end
-
-    def create
-
-        @field = Field.new field_params
-        if @field.save then
-            redirect_to '/fields/add'
-        else
-            re = ''
-            @field.errors.messages.each do |key, vals|
-                vals.each do |val|
-                    re += '<span style="color:red">' + key.to_s +
-                            '</span>' + val + '<br>'
-                end
-            end
-            @msg = re.html_safe
-            render 'add'
-        end
-
-    end
-
-    def edit
-        @msg = "edit data.[id = " + params[:id] + "]"
-        @field = Field.find(params[:id])
-    end
-
-    def update
-         @field = Field.find(params[:id])
-        @field.update(field_params)
-        redirect_to '/fields/index'
-    end
-
-    def delete
-        obj = Field.find(params[:id])
-        obj.destroy
-        redirect_to '/fields/index'
-    end
-    
-    private
+    # Only allow a list of trusted parameters through.
     def field_params
-        params.require(:field).permit(:subject_code, :f_code, :f_name)
+      params.require(:field).permit(:subject_id, :field__name)
     end
 end

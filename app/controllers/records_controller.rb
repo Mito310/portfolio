@@ -1,12 +1,9 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-
-
 
   # GET /records or /records.json
   def index
-     @records = Record.all
+    @records = Record.all
   end
 
   # GET /records/1 or /records/1.json
@@ -68,6 +65,6 @@ class RecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def record_params
-      params.require(:record).permit(:user_id, :date, :subject_code, :f_code)
+      params.require(:record).permit(:user_id, :date, :subject_id, :field_id)
     end
 end
