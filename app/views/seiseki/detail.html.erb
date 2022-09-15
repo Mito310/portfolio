@@ -5,7 +5,7 @@
         <% i += 1 %>
         <tr>
           <td><%= i %></td>
-          <td><%= Question.find_by(q_code: detail.q_code).q_sent %></td>
+          <td><%= Question.find(detail.question_id).sentence %></td>
         <% if detail.user_answer %>
           <td>〇</td>
         <% else %>
